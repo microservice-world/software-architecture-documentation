@@ -3,19 +3,28 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - main # Set a branch name to trigger deployment
+      - main
   pull_request:
   workflow_dispatch: {}
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-22.04
-    concurrency:
-      group: ${{ github.workflow }}-${{ github.ref }}
     env:
-      DTC_HEADLES: true
+      DTC_HEADLESS: true
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-ruby@v1
       - name: Setup docToolchain
         run: chmod +x dtcw
@@ -25,9 +34,21 @@ jobs:
         run: ./dtcw exportStructurizr generateHTML
       - name: Copy documentation to public
         run: cp -r ./build/html5 ./public && mv ./public/internet-banking-system.html ./public/index.html
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-22.04
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
