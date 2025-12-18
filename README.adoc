@@ -15,8 +15,40 @@ Check out the deployed https://bitsmuggler.github.io/arc42-c4-software-architect
 
 Go through the following steps:
 
+. <<Add to an existing repository>>
 . <<Prerequisites>>
 . <<Build the software architecture documentation>>
+
+== Add to an existing repository
+
+To add this architecture documentation template to an existing repository (e.g., a mono repo), run the following command from your repository root:
+
+[source, bash]
+----
+curl -sL https://github.com/microservice-world/software-architecture-documentation/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1
+----
+
+This will extract all template files into your current directory. For a mono repo where you want the documentation in a subdirectory:
+
+[source, bash]
+----
+mkdir -p docs/architecture && cd docs/architecture && \
+curl -sL https://github.com/microservice-world/software-architecture-documentation/archive/refs/heads/main.tar.gz | tar -xz --strip-components=1
+----
+
+Alternatively, use git subtree to keep the template updatable:
+
+[source, bash]
+----
+git subtree add --prefix=docs/architecture https://github.com/microservice-world/software-architecture-documentation.git main --squash
+----
+
+To update the template later:
+
+[source, bash]
+----
+git subtree pull --prefix=docs/architecture https://github.com/microservice-world/software-architecture-documentation.git main --squash
+----
 .. <<Generate PlantUML Diagrams from the C4 (Structurizr) Model>>
 .. <<Generate the software architecture documentation representations>>
 
