@@ -30,10 +30,10 @@ jobs:
         run: chmod +x dtcw
       - name: Migrate Markdown based ADRs from adr-tools to AsciiDoc
         run: ./dtcw exportMarkdown && cp ./build/adrs/*.adoc ./documentation/adrs/
-      - name: Generate HTML site
-        run: ./dtcw exportStructurizr generateHTML
-      - name: Copy documentation to public
-        run: cp -r ./build/html5 ./public && mv ./public/internet-banking-system.html ./public/index.html
+      - name: Generate Microsite
+        run: ./dtcw exportStructurizr generateSite
+      - name: Copy microsite to public
+        run: cp -r ./build/microsite/output ./public
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
