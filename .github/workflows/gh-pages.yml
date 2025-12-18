@@ -33,7 +33,10 @@ jobs:
       - name: Generate HTML
         run: ./dtcw exportStructurizr generateHTML
       - name: Copy HTML to public
-        run: cp -r ./build/html5 ./public
+        run: |
+          mkdir -p ./public
+          cp -r ./build/html5/* ./public
+          mv ./public/internet-banking-system.html ./public/index.html
       # - name: Generate Microsite
       #   run: ./dtcw exportStructurizr generateSite
       # - name: Copy microsite to public
