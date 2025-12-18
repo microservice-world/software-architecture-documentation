@@ -9,17 +9,53 @@ include::arc42/_config.adoc[]
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Table of Contents
 
-//additional style for arc42 help callouts
+//additional style for arc42 help callouts and O'Reilly theme
 ifdef::backend-html5[]
 ++++
 <style>
-.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0; padding: 2px 0 3px 2px;}
+/* O'Reilly Theme - Red accent #9E0000 */
+:root { --accent: #9E0000; --accent-dark: #7B0000; }
+
+/* Links */
+a { color: #9E0000; }
+a:hover { color: #7B0000; }
+
+/* Headings */
+h1, h2 { border-bottom: 2px solid #9E0000; padding-bottom: 0.3em; }
+h1 { border-bottom-width: 3px; }
+
+/* Tables */
+table th { background-color: #000000; color: #FFFFFF; }
+table tr:nth-child(even) td { background-color: #F8F8F8; }
+
+/* Code */
+code { background-color: #F4F4F4; padding: 0.1em 0.3em; }
+pre, .listingblock pre { background-color: #F4F4F4; border: 1px solid #DDDDDD; }
+
+/* Admonitions */
+.admonitionblock { border-left: 4px solid #DDDDDD; background: #F8F8F8; padding: 1em; margin: 1em 0; }
+.admonitionblock.note { border-left-color: #1A5276; }
+.admonitionblock.tip { border-left-color: #008000; }
+.admonitionblock.important { border-left-color: #9E0000; }
+.admonitionblock.warning, .admonitionblock.caution { border-left-color: #CC7000; }
+
+/* Blockquotes */
+blockquote, .quoteblock { border-left: 4px solid #9E0000; background: #FAFAFA; padding: 1em; font-style: italic; }
+
+/* TOC */
+#toctitle { color: #9E0000; }
+#toc a { color: #000000; }
+#toc a:hover { color: #9E0000; }
+
+/* Header */
+#header h1 { color: #9E0000; }
+
+/* arc42 help callouts */
+.arc42help {font-size:small; width: 14px; height: 16px; overflow: hidden; position: absolute; right: 0; padding: 2px 0 3px 2px; background: #9E0000; color: white; border-radius: 50%;}
 .arc42help::before {content: "?";}
-.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px;}
+.arc42help:hover {width:auto; height: auto; z-index: 100; padding: 10px; border-radius: 4px;}
 .arc42help:hover::before {content: "";}
-@media print {
-	.arc42help {display:none;}
-}
+@media print { .arc42help {display:none;} }
 </style>
 ++++
 endif::backend-html5[]

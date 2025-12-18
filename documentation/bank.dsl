@@ -225,21 +225,21 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 shape Person
             }
             element "Customer" {
-                background #08427b
+                background #7B0000
             }
             element "Bank Staff" {
-                background #999999
+                background #666666
             }
             element "Software System" {
-                background #1168bd
+                background #9E0000
                 color #ffffff
             }
             element "Existing System" {
-                background #999999
+                background #666666
                 color #ffffff
             }
             element "Container" {
-                background #438dd5
+                background #C0392B
                 color #ffffff
             }
             element "Web Browser" {
@@ -252,7 +252,7 @@ workspace "Big Bank plc" "This is an example workspace to illustrate the key fea
                 shape Cylinder
             }
             element "Component" {
-                background #85bbf0
+                background #E6B8AF
                 color #000000
             }
             element "Failover" {

@@ -1,0 +1,338 @@
+/* O'Reilly-Inspired Theme Overrides for Docsy Microsite
+ * Red accent: #9E0000
+ * Matches PDF and HTML theme styling
+ */
+
+/* ============================================
+   CSS VARIABLES - Override Docsy defaults
+   ============================================ */
+:root {
+  --primary-color: #9E0000;
+  --primary-dark: #7B0000;
+  --text-color: #000000;
+  --text-muted: #666666;
+  --background: #FFFFFF;
+  --background-alt: #F8F8F8;
+  --border-color: #DDDDDD;
+  --code-bg: #F4F4F4;
+}
+
+/* ============================================
+   BASE TYPOGRAPHY
+   ============================================ */
+body {
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+  color: var(--text-color);
+  background-color: var(--background);
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+h1, h2, h3, h4, h5, h6,
+.td-content h1, .td-content h2, .td-content h3,
+.td-content h4, .td-content h5, .td-content h6 {
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+h1, .td-content h1 {
+  border-bottom: 3px solid var(--primary-color);
+  padding-bottom: 0.3em;
+}
+
+h2, .td-content h2 {
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.2em;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--primary-dark);
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.td-navbar,
+.navbar {
+  background-color: var(--text-color) !important;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.td-navbar .navbar-brand,
+.navbar .navbar-brand {
+  color: #FFFFFF !important;
+}
+
+.td-navbar .nav-link,
+.navbar .nav-link {
+  color: #FFFFFF !important;
+  text-transform: capitalize !important;
+}
+
+.td-navbar .nav-link:hover,
+.navbar .nav-link:hover {
+  color: var(--primary-color) !important;
+}
+
+.td-navbar .active > .nav-link,
+.navbar .active > .nav-link {
+  color: var(--primary-color) !important;
+}
+
+/* Fix navbar menu item styling */
+.navbar-nav .nav-item .nav-link {
+  text-transform: capitalize !important;
+  font-weight: 500;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.td-sidebar {
+  background-color: var(--background-alt);
+  border-right: 1px solid var(--border-color);
+}
+
+.td-sidebar-nav .td-sidebar-link,
+.td-sidebar-nav a,
+#td-section-nav a,
+.td-sidebar-nav__section a {
+  color: var(--text-color);
+  padding-left: 10px !important;
+  display: block;
+}
+
+.td-sidebar-nav .td-sidebar-link:hover,
+.td-sidebar-nav .td-sidebar-link.active,
+.td-sidebar-nav a:hover,
+#td-section-nav a:hover {
+  color: var(--primary-color);
+}
+
+.td-sidebar-nav .td-sidebar-link.active,
+#td-section-nav a.active {
+  border-left: 3px solid var(--primary-color);
+  padding-left: 7px !important;
+  font-weight: bold;
+}
+
+/* Fix sidebar menu spacing */
+#td-section-nav ul,
+.td-sidebar-nav__section ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+#td-section-nav li,
+.td-sidebar-nav__section li {
+  padding: 4px 0;
+}
+
+/* Ensure all sidebar links have proper padding */
+.td-sidebar a,
+.td-sidebar-link {
+  padding: 5px 10px !important;
+  margin-left: 0 !important;
+}
+
+/* ============================================
+   CODE & PREFORMATTED
+   ============================================ */
+code {
+  color: var(--text-color);
+  background-color: var(--code-bg);
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+pre, .highlight pre {
+  background-color: var(--code-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+.td-content table th,
+table th {
+  background-color: var(--text-color);
+  color: #FFFFFF;
+  border-color: var(--text-color);
+}
+
+.td-content table td,
+table td {
+  border-color: var(--border-color);
+}
+
+.td-content table tr:nth-child(even) td,
+table tr:nth-child(even) td {
+  background-color: var(--background-alt);
+}
+
+/* ============================================
+   ADMONITIONS / ALERTS
+   ============================================ */
+.alert-primary,
+.admonition.note {
+  border-left: 4px solid #1A5276;
+  background-color: var(--background-alt);
+}
+
+.alert-success,
+.admonition.tip {
+  border-left: 4px solid #008000;
+  background-color: var(--background-alt);
+}
+
+.alert-danger,
+.admonition.important {
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--background-alt);
+}
+
+.alert-warning,
+.admonition.warning,
+.admonition.caution {
+  border-left: 4px solid #CC7000;
+  background-color: var(--background-alt);
+}
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+blockquote {
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--background-alt);
+  padding: 1em 1.5em;
+  font-style: italic;
+  color: #333333;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.td-footer,
+footer {
+  background-color: var(--text-color);
+  color: #FFFFFF;
+  border-top: 3px solid var(--primary-color);
+}
+
+.td-footer a,
+footer a {
+  color: #FFFFFF;
+}
+
+.td-footer a:hover,
+footer a:hover {
+  color: var(--primary-color);
+}
+
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================ */
+.td-toc {
+  border-left: 1px solid var(--border-color);
+}
+
+.td-toc a {
+  color: var(--text-color);
+}
+
+.td-toc a:hover,
+.td-toc a.active {
+  color: var(--primary-color);
+}
+
+/* ============================================
+   PAGE TITLE / HERO SECTION
+   ============================================ */
+.td-cover-block {
+  background-color: var(--text-color);
+}
+
+.td-cover-block h1 {
+  color: var(--primary-color);
+  border-bottom: none;
+}
+
+.td-cover-block .lead {
+  color: #CCCCCC;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.card {
+  border-color: var(--border-color);
+}
+
+.card-header {
+  background-color: var(--background-alt);
+  border-bottom-color: var(--border-color);
+}
+
+/* ============================================
+   SEARCH
+   ============================================ */
+.td-search-input {
+  border-color: var(--border-color);
+}
+
+.td-search-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(158, 0, 0, 0.25);
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+.breadcrumb {
+  background-color: var(--background-alt);
+}
+
+.breadcrumb-item a {
+  color: var(--primary-color);
+}
+
+/* ============================================
+   CUSTOM LOGO STYLING
+   ============================================ */
+.td-navbar .navbar-brand svg,
+.td-navbar .navbar-brand img {
+  height: 40px;
+}

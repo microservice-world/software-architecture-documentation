@@ -10,3 +10,10 @@
 
 :diagram-server-url: https://kroki.io
 :diagram-server-type: kroki_io
+
+
+// PDF theme settings
+:pdf-themesdir: {docdir}/pdfTheme
+:pdf-theme: oreilly
+:pdf-fontsdir: {docdir}/pdfTheme/fonts
+:title-page-background-image: image:{docdir}/pdfTheme/cover.jpg[fit=cover]

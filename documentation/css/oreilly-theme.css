@@ -1,0 +1,403 @@
+/* O'Reilly-Inspired Theme for HTML Output
+ * Matches the PDF theme colors and styling
+ * Red accent: #9E0000
+ */
+
+/* ============================================
+   BASE TYPOGRAPHY
+   ============================================ */
+body {
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #000000;
+  background-color: #FFFFFF;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* ============================================
+   HEADINGS
+   ============================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Serif", Georgia, "Times New Roman", serif;
+  font-weight: bold;
+  color: #000000;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.4em;
+  border-bottom: 3px solid #9E0000;
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.8em;
+  border-bottom: 2px solid #9E0000;
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 1.4em;
+  color: #333333;
+}
+
+h4 {
+  font-size: 1.2em;
+  color: #333333;
+}
+
+h5, h6 {
+  font-size: 1em;
+  color: #666666;
+}
+
+/* ============================================
+   LINKS
+   ============================================ */
+a {
+  color: #9E0000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #7B0000;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #660000;
+}
+
+/* ============================================
+   CODE & PREFORMATTED
+   ============================================ */
+code, pre, .literalblock pre, .listingblock pre {
+  font-family: "M+ 1mn", "Consolas", "Monaco", "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+code {
+  color: #000000;
+  background-color: #F4F4F4;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+}
+
+pre, .literalblock pre, .listingblock pre {
+  background-color: #F4F4F4;
+  border: 1px solid #DDDDDD;
+  border-radius: 0;
+  padding: 1em;
+  overflow-x: auto;
+  line-height: 1.4;
+}
+
+.listingblock .title {
+  font-style: italic;
+  color: #666666;
+  margin-bottom: 0.5em;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+table th {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 0.75em;
+  text-align: left;
+  border: 1px solid #000000;
+}
+
+table td {
+  padding: 0.75em;
+  border: 1px solid #CCCCCC;
+}
+
+table tr:nth-child(even) td {
+  background-color: #F8F8F8;
+}
+
+table caption {
+  font-style: italic;
+  color: #666666;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+/* ============================================
+   ADMONITIONS (Notes, Warnings, Tips, etc.)
+   ============================================ */
+.admonitionblock {
+  margin: 1.5em 0;
+  padding: 1em;
+  background-color: #F8F8F8;
+  border-left: 4px solid #DDDDDD;
+}
+
+.admonitionblock.note {
+  border-left-color: #1A5276;
+}
+
+.admonitionblock.tip {
+  border-left-color: #008000;
+}
+
+.admonitionblock.important {
+  border-left-color: #9E0000;
+}
+
+.admonitionblock.warning {
+  border-left-color: #CC7000;
+}
+
+.admonitionblock.caution {
+  border-left-color: #CC7000;
+}
+
+.admonitionblock td.icon {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-right: 1em;
+  vertical-align: top;
+}
+
+.admonitionblock.note td.icon {
+  color: #1A5276;
+}
+
+.admonitionblock.tip td.icon {
+  color: #008000;
+}
+
+.admonitionblock.important td.icon {
+  color: #9E0000;
+}
+
+.admonitionblock.warning td.icon,
+.admonitionblock.caution td.icon {
+  color: #CC7000;
+}
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+blockquote, .quoteblock {
+  margin: 1.5em 0;
+  padding: 1em 1.5em;
+  border-left: 4px solid #9E0000;
+  background-color: #FAFAFA;
+  font-style: italic;
+  color: #333333;
+}
+
+blockquote cite, .quoteblock .attribution {
+  display: block;
+  margin-top: 0.5em;
+  font-style: normal;
+  font-size: 0.9em;
+  color: #666666;
+}
+
+blockquote cite::before, .quoteblock .attribution::before {
+  content: "— ";
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.sidebarblock {
+  background-color: #F4F4F4;
+  border: 1px solid #DDDDDD;
+  padding: 1.5em;
+  margin: 1.5em 0;
+}
+
+.sidebarblock .title {
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 0.5em;
+}
+
+/* ============================================
+   IMAGES & FIGURES
+   ============================================ */
+.imageblock {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.imageblock img {
+  max-width: 100%;
+  height: auto;
+}
+
+.imageblock .title {
+  font-style: italic;
+  color: #666666;
+  margin-top: 0.5em;
+  font-size: 0.9em;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+ul, ol {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+dl dt {
+  font-weight: bold;
+  margin-top: 1em;
+}
+
+dl dd {
+  margin-left: 1.5em;
+}
+
+/* ============================================
+   TABLE OF CONTENTS
+   ============================================ */
+#toc {
+  background-color: #F8F8F8;
+  border: 1px solid #DDDDDD;
+  padding: 1.5em;
+  margin-bottom: 2em;
+}
+
+#toc a {
+  color: #000000;
+}
+
+#toc a:hover {
+  color: #9E0000;
+}
+
+#toctitle {
+  font-size: 1.4em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #9E0000;
+}
+
+/* ============================================
+   TITLE PAGE / HEADER
+   ============================================ */
+#header {
+  margin-bottom: 2em;
+  padding-bottom: 1em;
+  border-bottom: 3px solid #9E0000;
+}
+
+#header h1 {
+  color: #9E0000;
+  border-bottom: none;
+  margin-bottom: 0.2em;
+}
+
+#header .details {
+  color: #666666;
+  font-size: 0.9em;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+#footer {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid #DDDDDD;
+  color: #666666;
+  font-size: 0.9em;
+}
+
+/* ============================================
+   EXAMPLE BLOCKS
+   ============================================ */
+.exampleblock {
+  border: 1px solid #DDDDDD;
+  padding: 1em;
+  margin: 1.5em 0;
+}
+
+.exampleblock .title {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* ============================================
+   ARC42 SPECIFIC STYLES
+   ============================================ */
+.arc42help {
+  font-size: small;
+  width: 14px;
+  height: 16px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  padding: 2px 0 3px 2px;
+  background-color: #9E0000;
+  color: white;
+  border-radius: 50%;
+}
+
+.arc42help::before {
+  content: "?";
+}
+
+.arc42help:hover {
+  width: auto;
+  height: auto;
+  z-index: 100;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.arc42help:hover::before {
+  content: "";
+}
+
+@media print {
+  .arc42help {
+    display: none;
+  }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  pre {
+    font-size: 0.85em;
+  }
+}
