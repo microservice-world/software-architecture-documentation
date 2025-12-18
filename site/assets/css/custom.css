@@ -83,9 +83,13 @@ a:hover {
   color: var(--primary-color) !important;
 }
 
+/* Active state for top navbar items */
+.td-navbar .nav-link.active,
+.navbar .nav-link.active,
 .td-navbar .active > .nav-link,
 .navbar .active > .nav-link {
   color: var(--primary-color) !important;
+  border-bottom: 2px solid var(--primary-color);
 }
 
 /* Fix navbar menu item styling */

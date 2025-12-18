@@ -99,9 +99,6 @@
         <nav aria-label="Submenu" class="collapse td-sidebar-nav" id="td-section-nav" >
 
             <ul class="td-sidebar-nav__section">
-                <li class="td-sidebar-nav__section-title">
-                    <span class="align-left pl-0 pr-2 pt-2 active td-sidebar-link td-sidebar-link__section"><%= printTitle(content['jbake-menu']) %></span>
-                </li>
                 <li>
                   <ul>
                       <li class="collapse show" id="docs">
